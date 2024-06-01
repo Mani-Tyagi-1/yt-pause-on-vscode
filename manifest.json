@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Pause on Browser Focus",
+  "version": "1.0",
+  "description": "Pauses YouTube video when switching away from the browser and resumes it when switching back.",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["*://*.youtube.com/*"]
+}
